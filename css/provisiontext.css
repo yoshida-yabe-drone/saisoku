@@ -1,0 +1,494 @@
+@charset "UTF-8";
+
+.laws .law {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: var(--side-margin);
+  margin-inline-end: var(--side-margin);
+  font-size: 1.6rem;
+}
+
+.laws .provisioncited .law {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+/* 廃止された法令 */
+.laws .law .repealed {
+  color: #808080;
+}
+
+/* 条文スタイル定義の反映：条文内のpタグをinline化、項のインデント調整  */
+.laws .law p {
+  display: inline;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* テーブルのスタイル調整 */
+.laws .law table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* テーブル内sentenceのインライン調整 */
+.laws .law table td > p.sentence {
+  display: block;
+}
+
+.laws .law .remarks > .sentence,
+.laws .law .notestruct > p:first-of-type,
+.laws .law .formatstruct > p:first-of-type {
+  margin-inline-start: 1em;
+  text-indent: -1em;
+}
+
+.laws .law .appdxtable .remarks > .sentence {
+  margin-inline-start: 0em;
+  text-indent: 0em;
+}
+
+/* .laws .law .sublist > * > * > .column > .sentence,
+.laws .law .list-sentence > .column > .sentence {
+  margin-inline-end: 1em;
+  text-indent: 0;
+} */
+
+/* タイトルがある場合のインライン調整 */
+.laws .law div.istitle {
+  text-indent: -1em;
+}
+
+/* タイトルがない場合のインライン調整 */
+.laws .law div.isnotitle {
+  margin-inline-start: -1em;
+}
+
+.laws .law .paragraph div.isnotitle {
+  text-indent: 1em;
+}
+
+.laws .law .tablestruct .paragraph div.isnotitle,
+.laws .law div.isnotitle.item,
+.laws .law div.isnotitle.subitem {
+  text-indent: 0em;
+}
+
+/* H resetting */
+
+.laws .law h1,
+.laws .law h2,
+.laws .law h3,
+.laws .law h4,
+.laws .law h5,
+.laws .law h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* Title */
+
+.laws .law .titlegroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em 0;
+  margin: 0;
+}
+
+/*
+.laws .law .lawnumber {
+}
+*/
+
+.laws .law .lawtitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1.6;
+  padding-inline-start: calc(1.6rem * 3); /* Indented for 3 characters */
+  margin-block-end: 12px;
+}
+
+/* 条文スタイル定義：制定文 */
+.enactstatement {
+  text-indent: 1em;
+  margin-block-end: 10px;
+}
+
+/* Opening TOC */
+
+.laws .law .openingtoc {
+  margin-block-end: 10px; /* 条文スタイル定義 */
+}
+
+.laws .law .openingtoctitle {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.laws .law .openingtocpreamblelabel {
+  text-indent: 1em;
+}
+
+.laws .law .openingtocitems {
+  padding-inline-start: 1em;
+}
+
+.laws .law .toc-suppl-provision {
+  padding-inline-start: 1em;
+}
+
+/* 条文スタイル定義の反映：前文  */
+.laws .law .paragraph.preamble {
+  margin-block-end: 10px;
+  text-indent: -1em;
+  margin-inline-start: 1em;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* Section levels */
+
+.laws .law .parttitle,
+.laws .law .chaptertitle,
+.laws .law .sectiontitle,
+.laws .law .subsectiontitle,
+.laws .law .divisiontitle,
+.laws .law .newprovision-lawtitle {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-block-start: 10px; /* 条文スタイル定義の反映：見出しの上マージン */
+  margin-block-end: 10px; /* 条文スタイル定義の反映：見出しの下マージン */
+}
+
+.laws .law .parttitle {
+  margin-inline-start: 2em;
+}
+
+.laws .law .chaptertitle {
+  margin-inline-start: 3em;
+}
+
+.laws .law .sectiontitle {
+  margin-inline-start: 4em;
+}
+
+.laws .law .subsectiontitle {
+  margin-inline-start: 5em;
+}
+
+.laws .law .divisiontitle {
+  margin-inline-start: 6em;
+}
+
+/* Article level */
+
+.laws .law .article {
+  display: block;
+  padding-block-end: 10px; /* 条文スタイル定義の反映： 条の下余白 */
+}
+
+/* 条文スタイル定義の反映：SupplNote(付記) */
+.laws .law .supplnote {
+  margin-inline-start: 1em;
+  text-indent: -1em;
+}
+
+/* 条文スタイル定義の反映： provisiontext内のpタグをinlineに変更
+.laws .law .article p {
+  display: inline;
+}
+*/
+
+.laws .law .articleheading {
+  display: block;
+  font-weight: bold;
+  margin-inline-start: 1em;
+  margin-block-start: 0.5em;
+  margin-block-end: -0.5em;
+}
+
+.laws .law .paragraphtitle.horizontal {
+  margin-inline-end: 0;
+}
+
+.laws .law .articleheading.horizontal {
+  display: inline;
+  margin-inline-start: 0;
+  /* margin-inline-end: 1em; */
+}
+
+.laws .law .paragraph, /* 項 */
+.laws .law .item, /* 号 */
+.laws .law .portion {
+  /* イ ロ ハ,（１）（２）（３）... */
+  margin-block-start: 0; /* 条文スタイル定義の反映：項/号/号細分の上下余白調整 */
+  margin-block-end: 0; /* 条文スタイル定義の反映：項/号/号細分の上下余白調整 */
+  margin-inline-end: 0;
+  margin-inline-start: 1em;
+}
+
+/* 号建て法令のインライン調整 */
+.laws .law .itemlaw {
+  margin-block-start: 0; /* 条文スタイル定義の反映：項/号/号細分の上下余白調整 */
+  margin-block-end: 0; /* 条文スタイル定義の反映：項/号/号細分の上下余白調整 */
+  margin-inline-end: 0;
+  margin-inline-start: 0;
+}
+
+/* 項タイトル */
+.laws .law .paragraph .paragraphheading {
+  display: block;
+  font-weight: bold;
+}
+
+
+.laws .law #TOC .articletitle {
+  margin-inline-start: 0;
+  margin-inline-end: 1em;
+  font-weight: normal;
+}
+
+.laws .law .articletitle,
+.laws .law .paragraphtitle,
+.laws .law .itemtitle,
+.laws .law .portiontitle {
+  display: inline;
+  font-weight: bold;
+  /* margin-inline-start: -1em;
+  margin-inline-end: 1em; */
+}
+
+/* Block quote */
+
+.laws .law .blockquote {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.laws .law .blockquote .article {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+/* 条文スタイル定義の反映：リスト */
+.laws .law .list {
+  /* margin-inline-start: 1em; */
+  text-indent: 0;
+}
+
+/* 条文スタイル定義の反映：リスト 条文スタイルType=paragraphの場合 */
+.laws .law .article.paragraphroot .paragraph > .list {
+  /* margin-inline-start: 0; */
+  text-indent: 0;
+}
+
+.laws .law .sublist {
+  margin-inline-start: 1em;
+}
+
+.laws .law .column {
+  display: inline;
+}
+
+/* .laws .law .column:not(:last-child) {
+  display: inline;
+  margin-inline-end: 1em;
+} */
+
+.laws .law .amendprovision {
+  text-indent: 1em;
+}
+
+.laws .law .amendprovision .articleheading {
+  text-indent: 0em;
+}
+
+/* 条文スタイル定義の反映：改正制定文 */
+.laws .law .amendprovision-sentence {
+  margin-inline-start: 1em; /* 1字下げて2文字目から表示 */
+  text-indent: 1em; /* 行頭は更に1字下げて3文字目から表示。折り返し後はインデントなしの2文字目から表示 */
+}
+
+/* 条文スタイル定義の反映：附則ラベル */
+.laws .law .supplprovision {
+  padding-block-end: 10px;
+}
+
+/* 条文スタイル定義の反映：附則ラベル */
+.laws .law .supplprovision-label {
+  font-weight: bold;
+  margin-inline-start: 3em;
+  margin-block-end: 10px;
+}
+
+/* 附則：条の中の項の場合 */
+.laws .law .supplprovision .supplprovision-article-paragraph {
+  margin-block-end: 10px;
+}
+
+/* 条文スタイル定義の反映：別表他 */
+.laws .law .appdxtable {
+  padding-block-end: 10px;
+}
+.laws .law .appdxtable-title {
+  font-weight: bold;
+}
+
+.laws .law .appdxnote {
+  padding-block-end: 10px;
+}
+.laws .law .appdxnote-title {
+  font-weight: bold;
+}
+
+.laws .law .appdxstyle {
+  padding-block-end: 10px;
+}
+.laws .law .appdxstyle-title {
+  font-weight: bold;
+}
+
+.laws .law .appdx {
+  padding-block-end: 10px;
+}
+.laws .law .appdx-title {
+  font-weight: bold;
+}
+
+.laws .law .appdxfig {
+  padding-block-end: 10px;
+}
+.laws .law .appdxfig-title {
+  font-weight: bold;
+}
+
+.laws .law .appdxformat {
+  padding-block-end: 10px;
+}
+.laws .law .appdxformat-title {
+  font-weight: bold;
+}
+
+.laws .law .tablestruct {
+  width: 100%;
+  margin-inline-start: 1em;
+  padding-block-end: 10px;
+}
+
+.laws .law .tablestruct-title {
+  font-weight: bold;
+}
+
+.laws .law .figstruct {
+  padding-block-end: 10px;
+}
+
+.laws .law .figstruct-title {
+  font-weight: bold;
+}
+
+.laws .law .fig {
+  margin-inline-start: 1em;
+}
+
+.laws .law .notestruct-title {
+  font-weight: bold;
+}
+
+.laws .law .stylestruct-title {
+  font-weight: bold;
+}
+
+.laws .law .formatstruct-title {
+  font-weight: bold;
+}
+
+/* 条文スタイル定義の反映：ArithFormula */
+.laws .law .arithformula {
+  margin-inline-start: 1em;
+}
+
+/* 表内の本文の中央揃えを上揃えにする追記 */
+.laws .law tr{
+  vertical-align: text-top;
+}
+
+/* テーブル内の最初は字下げしない */
+.laws .law table td>p:first-of-type {
+  margin-inline-start: 0;
+}
+
+.laws .law .openingtocitems.quote-struct {
+  margin-inline-start: 1em;
+}
+
+.laws .law .figstruct.any.quote-struct {
+  margin-inline-start: 1em;
+  padding-block-end: 0;
+}
+
+.laws .law .newprovision-lawtitle {
+  margin-inline-start: 2em;
+}
+
+/* HTML化法令のスタイル調整 */
+.laws .law .Table {
+  width: 100%;
+}
+
+.laws .law .Table td {
+  padding: 8px;
+}
+
+.laws .law section.MainProvision,
+.laws .law section.Part,
+.laws .law section.Chapter,
+.laws .law section.Section,
+.laws .law section.Subsection,
+.laws .law section.Division
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.laws .law section.SupplProvision,
+.laws .law section.Appdx,
+.laws .law section.AppdxTable,
+.laws .law section.AppdxStyle,
+.laws .law section.AppdxFig,
+.laws .law section.AppdxNote,
+.laws .law section.AppdxFormat,
+.laws .law section.Appdx {
+  padding-top: 0.5em;
+}
+
+.laws .law section.Article {
+  padding-top: 0.2em;
+}
+
+.laws .law section.SupplProvision section.Article {
+  padding-top: 0em;
+}
+
+.laws .law ._div_ArticleCaption {
+  margin-block-start: 0.5em;
+  margin-block-end: -0.5em;
+}
+
+.laws .law ._div_SupplProvisionLabel {
+  margin-bottom: 0 !important;
+}
+
+.laws .law .fig_pdf_icon {
+  background-image: url('/images/data/icon_pdf.png');
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}

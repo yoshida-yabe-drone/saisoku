@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+.laws .toc {
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1023px) {
+  .laws .toc {
+    display: block;
+    padding-bottom: calc(var(--bar-height) + 20px);
+    overflow-y: auto;
+    height: calc(100vh - calc(var(--rootbar-height) + var(--titlebar-height) + calc(var(--bar-height) + 20px)));
+  }
+}
+
+.laws .tocitems {
+}
+
+.laws .tocitems .tocitems {
+  margin-left: 16px;
+}
+
+.laws .tocitem {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  margin: 4px var(--side-margin) 0;
+  padding-left: 22px;
+}
+
+@media screen and (max-width: 1023px) {
+  .laws .tocitem {
+    font-size: 1.5rem;
+  }
+}
+
+.laws summary.tocitem::-webkit-details-marker {
+  display: none;
+}
+
+.laws summary.tocitem {
+  background-image: url(../images/chevron-right.svg);
+  background-repeat: no-repeat;
+  background-position: left 0.8rem;
+  background-size: 1.2rem 1.2rem;
+}
+
+.laws details[open] > summary.tocitem {
+  background-image: url(../images/chevron-down.svg);
+}
+
+.laws .tocitemlabel {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+}
+
+.laws .tocitemtitle a {
+  display: inline-block;
+  color: var(--label-color);
+  padding: 2px;
+}
+
+.laws .tocitemcheckbox {
+  /*
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+*/
+  /* Instead, place under the eye icon with zero opacity for iOS Safari */
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.4rem !important;
+  margin-left: 0.2rem !important;
+  margin-right: 0 !important;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.laws .tocitemtitle {
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.laws .tocitemcheckbox + .tocitemtitle::before {
+  content: '';
+  display: block;
+  background-image: url(../images/eye-fill-translucent.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1.8rem;
+  min-width: 1.8rem;
+  height: 1.9rem;
+  margin-top: 0.3rem;
+  margin-left: 0.2rem;
+  margin-right: 0.8rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.laws .tocitemcheckbox:checked + .tocitemtitle::before {
+  background-image: url(../images/eye-fill.svg);
+}
+
+.laws .tocitemcheckbox:focus + .tocitemtitle::before {
+  border: 2px solid var(--link-color) !important;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 1023px) {
+  .laws .tocitemcheckbox {
+    width: 20px;
+    height: 20px;
+  }
+
+  .laws .tocitemcheckbox + .tocitemtitle::before {
+    content: '';
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    margin-top: 0;
+    margin-right: 16px;
+  }
+}
+
+.laws .toc .toolbar {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .laws .toc .toolbar {
+    display: flex;
+  }
+}

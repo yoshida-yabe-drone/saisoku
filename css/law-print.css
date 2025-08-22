@@ -1,0 +1,33 @@
+@media print {
+  .laws .rootbar,
+  .laws .titlebar,
+  .laws .timebar,
+  .laws .sidebar,
+  .laws #provisionoptions.provisionoptions,
+  .laws .revisionmeta .iconbutton,
+  .laws .provisiontext .lawheaderoptions .articleoptiondisclosure,
+  .laws .provisiontext.showingarticleoptions article .articleoptions,
+  .laws .revisionmeta .metamenuitems {
+    display: none !important;
+  }
+  /** 条文の高さを固定することにより、プレビュー時に全てが表示されないため、高さを固定を解除する */
+  .laws .revision {
+    height: auto !important;
+    overflow: visible !important;
+    margin-left: 0 !important;
+  }
+
+  .print-section {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 0 !important;
+  }
+  .laws .openiengtocitem a {
+    color: var(--label-color);
+  }
+  .toolbar{
+    opacity: 0;
+  }
+}
