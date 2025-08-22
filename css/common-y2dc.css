@@ -1,0 +1,88 @@
+@import url('common.css');
+@import url('law-print.css');
+
+/* Vaiables */
+
+:root {
+  --rootbar-height: 64px;
+}
+
+.laws-sub {
+  --rootbar-height: 0px;
+}
+
+/* General */
+
+/* Root bar */
+
+.laws .rootbar {
+  color: #222;
+  background-color: white;
+  border-bottom: var(--grid);
+}
+
+.laws-sub .rootbar {
+  border: none;
+}
+
+.laws .appname img {
+  height: 26px;
+}
+
+.laws .appnametext {
+  font-weight: bold;
+  margin-left: 14px;
+  font-size: 2rem;
+  color: #444;
+  letter-spacing: 0.05em;
+}
+
+.laws .rootbaroptions {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.laws .rootbaroptions-alt {
+  display: none;
+}
+
+.laws .rootbaroption {
+  font-size: 1.5rem;
+}
+
+.laws .rootbarhelp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.laws .rootbarhelp::before {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url(../images/circle-question.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 0.6rem;
+}
+
+.laws .rootbarhelp > img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .laws .rootbaroptions {
+    display: none;
+  }
+
+  .laws .rootbaroptions-alt {
+    display: flex;
+  }
+
+  .laws .rootbaroptions-alt .rootbarhelp::before {
+    display: none;
+  }
+}
